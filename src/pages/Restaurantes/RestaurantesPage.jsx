@@ -1,6 +1,7 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import RestauranteCard from "../../components/RetauranteCard/RestauranteCard";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
 
@@ -14,6 +15,7 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
+      console.log(response)
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -40,14 +42,13 @@ function RestaurantesPage() {
         </div>
       }
       {restaurantesBaratinho?.map(restaurante => (
-        <div className="restaurante" key={restaurante.id}>
-          {restaurante.nome}
-          {restaurante.distancia}
-          {restaurante.imagem}
-          {restaurante.nota}
-          {restaurante.tempo_medio}
-          {restaurante.valor_entrega}
-        </div>
+
+        <>
+          <RestauranteCard key={restaurante.id} imagem={restaurante.imagem} nome={restaurante.nome}
+            distancia={restaurante.distancia} nota={restaurante.nota} tempoMedio={restaurante.tempo_medio}
+            valorEntrega={restaurante.valor_entrega} />
+
+        </>
       ))}
       {restaurantesNoPreco &&
         <div className="sub-header">
@@ -58,14 +59,9 @@ function RestaurantesPage() {
       }
       {
         restaurantesNoPreco?.map(restaurante => (
-          <div key={restaurante.id}>
-            {restaurante.nome}
-            {restaurante.distancia}
-            {restaurante.imagem}
-            {restaurante.nota}
-            {restaurante.tempo_medio}
-            {restaurante.valor_entrega}
-          </div>
+          <RestauranteCard key={restaurante.id} imagem={restaurante.imagem} nome={restaurante.nome}
+            distancia={restaurante.distancia} nota={restaurante.nota} tempoMedio={restaurante.tempo_medio}
+            valorEntrega={restaurante.valor_entrega} />
         ))}
       {
         restaurantesCaro &&
@@ -77,14 +73,9 @@ function RestaurantesPage() {
       }
       {
         restaurantesCaro?.map(restaurante => (
-          <div key={restaurante.id}>
-            {restaurante.nome}
-            {restaurante.distancia}
-            {restaurante.imagem}
-            {restaurante.nota}
-            {restaurante.tempo_medio}
-            {restaurante.valor_entrega}
-          </div>
+          <RestauranteCard key={restaurante.id} imagem={restaurante.imagem} nome={restaurante.nome}
+            distancia={restaurante.distancia} nota={restaurante.nota} tempoMedio={restaurante.tempo_medio}
+            valorEntrega={restaurante.valor_entrega} />
         ))}
 
     </Container>
