@@ -1,8 +1,7 @@
-import { Container, Typography, CircularProgress } from "@material-ui/core";
+import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getDetalhes } from "../../services/detalhes.service";
 import { useParams } from "react-router-dom";
-// import { getRestaurantes } from "../../services/restaurantes.service";
 
 import "./style.css";
 
@@ -16,6 +15,7 @@ function DetalhesPage() {
   const [detalhesNota, setDetalhesNota] = useState([]);
   const [detalhesDescricao, setDetalhesDescricao] = useState([]);
   const [detalhesEndereco, setDetalhesEndereco] = useState([]);
+  const [detalhesCardapio, setDetalhesCardapio] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams()
   
@@ -25,25 +25,71 @@ function DetalhesPage() {
       setDetalhesNome(response.nome);
       setDetalhesImagem(response.imagem);
       setDetalhesDistancia(response.distancia);
-	  setDetalhesTempoMedio(response.tempo_medio);
-	  setDetalhesValorEntrega(response.valor_entrega);
-	  setDetalhesNota(response.nota);
-	  setDetalhesDescricao(response.descricao);
-	  setDetalhesEndereco(response.endereco);
+      setDetalhesTempoMedio(response.tempo_medio);
+      setDetalhesValorEntrega(response.valor_entrega);
+      setDetalhesNota(response.nota);
+      setDetalhesDescricao(response.descricao);
+      setDetalhesEndereco(response.endereco);
+      setDetalhesCardapio(response.cardapio);
       setLoading(false);
     })
   }, []);
 
   return (
 	<Container className="detalhes">
-    <img
+
+    <img className="imgRestaurante"
       src={detalhesImagem}
       alt={detalhesNome}
-      className="imgRestaurante"
     />
-    <Typography variant="h5" align="center" color="primary" className="title">
-				RESTAURANTES {detalhesNome}
-			</Typography>
+    <div className="detalhesTextos">
+      <Typography className="textTitulo">
+        {detalhesNome}
+      </Typography>
+      <Typography className="textNames">
+        {detalhesDistancia} km
+      </Typography>
+      <Typography className="textNota">
+        {detalhesNota}
+      </Typography>
+      <Typography className="textNames">
+        {detalhesTempoMedio} - {detalhesValorEntrega}
+      </Typography>
+    </div>
+
+    <Typography className="textDescricao">
+        {detalhesDescricao}
+    </Typography>
+
+    <Typography className="textEndereco">
+        {detalhesEndereco}
+    </Typography>
+  
+    {detalhesCardapio.map((cardapio) => (
+      <Grid key={cardapio.id}>
+        <div className="containerDetalhes">
+          <Typography className="textNamesCategoria">{cardapio.categoria}</Typography>
+        </div>
+
+        {cardapio.itens.map((itens) => (
+          <Grid key={itens.id}>
+                <img className="imgComida"
+                  src={itens.imagem}
+                  alt={itens.nome}
+                />
+                
+              <div className="detalhesComida">
+                <Typography className="nomeComida">{itens.nome}</Typography>
+                <Typography className="descricaoComida">{itens.descricao}</Typography>
+                <Typography className="valorComida">R$ {itens.valor}</Typography>
+              </div>
+            </Grid>
+        ))}
+      </Grid>
+    ))}
+    
+
+
 	</Container>
 );
 }

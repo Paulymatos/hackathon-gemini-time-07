@@ -1,25 +1,112 @@
-.detalhes .gridContainer {
-	margin-top: 45px;
+/* .detalhes .gridContainer {
+	margin-top: 30px;
+	display: grid;
+} */
+
+
+.detalhes .detalhesTextos {
+	line-height: 15px;
+	margin-top: -90px;
+	margin-left: 100px;
+	flex-direction: column;
 }
 
 .detalhes .textNames {
-	text-align: center;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
 	font-size: 14px;
+	line-height: 30px;
+	color: #828282;	
 }
-
+.detalhes .textTitulo {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	color: #828282;
+}
+.detalhes .textNota {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	color: #ED6E27;
+}
 .detalhes .imgRestaurante {
-	position: absolute;
 	width: 89px;
 	height: 89px;
-	left: 21px;
-	top: 124px;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+.detalhes .textDescricao {
+	margin-top: 20px;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 14px;
+	color: #828282;
+}
+.detalhes .textEndereco {
+	margin-top: 20px;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	color: #828282;
+	
+}
+.detalhes .containerDetalhes {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.detalhes .imgComida {
+	margin-top: 20px;
+	width: 85.44px;
+	height: 58.74px;
 	border-radius: 5px;
 }
-
-.detalhes .containerDetalhes {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin: 10px 0 5px;
-	cursor: pointer;
+.detalhes .textNamesCategoria {
+	text-align: center;
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
 }
+.detalhes .detalhesComida {
+	margin-top: -60px;
+	margin-left: 100px;
+	justify-content: space-between;
+}
+.detalhes .nomeComida {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 20px;
+	color: #828282;
+}
+.detalhes .descricaoComida {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 11px;
+	color: #828282;
+}
+.detalhes .valorComida {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: right;
+	color: #828282;
+}
+
