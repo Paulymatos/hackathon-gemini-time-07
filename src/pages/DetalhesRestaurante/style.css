@@ -7,11 +7,13 @@
 	font-size: 14px;
 }
 
-.detalhes .imgCategory {
-	max-width: 350px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	margin-bottom: 4px;
+.detalhes .imgRestaurante {
+	position: absolute;
+	width: 89px;
+	height: 89px;
+	left: 21px;
+	top: 124px;
+	border-radius: 5px;
 }
 
 .detalhes .containerDetalhes {
