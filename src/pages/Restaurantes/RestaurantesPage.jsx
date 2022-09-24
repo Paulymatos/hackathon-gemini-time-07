@@ -14,7 +14,6 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
-      console.log(response)
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -22,8 +21,6 @@ function RestaurantesPage() {
       setLoading(false);
     })
   }, []);
-
-  console.log(restaurantesBaratinho)
 
   return (
     <Container class="restaurantes">
