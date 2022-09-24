@@ -33,13 +33,6 @@ function Header() {
             MenuListProps={{ disablePadding: true }}
             className="paper"
           >
-            <Link to="/" className="linkMenu">
-              <MenuItem onClick={handleClose} className="menu">
-                <Typography variant="h6">
-                  Início
-                </Typography>  
-              </MenuItem>
-            </Link>
             <Link to="/categorias" className="linkMenu">
               <MenuItem onClick={handleClose} className="menu">
                 <Typography variant="h6">
