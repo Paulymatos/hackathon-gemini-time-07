@@ -20,7 +20,6 @@ function DetalhesPage() {
   
   useEffect(() => {
     getDetalhes(id).then((response) => {
-      setDetalhesID(response.detalhesID)
       setDetalhesNome(response.nome);
       setDetalhesImagem(response.imagem);
       setDetalhesDistancia(response.distancia);
