@@ -14,6 +14,7 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
+      console.log(response)
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -21,6 +22,8 @@ function RestaurantesPage() {
       setLoading(false);
     })
   }, []);
+
+  console.log(restaurantesBaratinho)
 
   return (
     <Container class="restaurantes">
@@ -32,16 +35,61 @@ function RestaurantesPage() {
           <CircularProgress color="primary" />
         </div>
       )}
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          Baratinho <span>(</span>$ <span>$ $ $ $)</span>
-        </Typography>
-      </div>
+      {restaurantesBaratinho &&
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            Baratinho <span>(</span>$ <span>$ $ $ $)</span>
+          </Typography>
+        </div>
+      }
       {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
+        <div className="restaurante" key={restaurante.id}>
           {restaurante.nome}
+          {restaurante.distancia}
+          {restaurante.imagem}
+          {restaurante.nota}
+          {restaurante.tempo_medio}
+          {restaurante.valor_entrega}
         </div>
       ))}
+      {restaurantesNoPreco &&
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            No Preço <span>(</span>$ $ $ <span>$)</span>
+          </Typography>
+        </div>
+      }
+      {
+        restaurantesNoPreco?.map(restaurante => (
+          <div key={restaurante.id}>
+            {restaurante.nome}
+            {restaurante.distancia}
+            {restaurante.imagem}
+            {restaurante.nota}
+            {restaurante.tempo_medio}
+            {restaurante.valor_entrega}
+          </div>
+        ))}
+      {
+        restaurantesCaro &&
+        <div className="sub-header">
+          <Typography variant="body1" color="primary">
+            Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
+          </Typography>
+        </div>
+      }
+      {
+        restaurantesCaro?.map(restaurante => (
+          <div key={restaurante.id}>
+            {restaurante.nome}
+            {restaurante.distancia}
+            {restaurante.imagem}
+            {restaurante.nota}
+            {restaurante.tempo_medio}
+            {restaurante.valor_entrega}
+          </div>
+        ))}
+
     </Container>
   )
 }
