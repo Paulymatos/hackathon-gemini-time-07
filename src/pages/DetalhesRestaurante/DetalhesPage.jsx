@@ -17,7 +17,7 @@ function DetalhesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getDetalhes().then((restaurante) => {
+    getDetalhes().then((response) => {
       setDetalhesID(response.detalhesID)
       setDetalhesNome(response.detalhesNome);
       setDetalhesImagem(response.detalhesImagem);
