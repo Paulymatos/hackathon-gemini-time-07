@@ -18,7 +18,7 @@ function CategoriasPage() {
 	const getCategorias = async () => {
 		const result = await getAllCategorias();
 		setCategorias(result.data);
-		setLoading(false);
+		setLoading();
 	};
 
 	useEffect(() => {
@@ -37,18 +37,18 @@ function CategoriasPage() {
 
 			<Grid container spacing={1} className="gridContainer">
 				{categorias.map((categoria) => (
-					<Grid item xs={4} key={categoria.id}>
+					<Grid item xs={4} key={categoria.ID}>
 						<div
 							className="containerCategorias"
-							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
+							onClick={() => navigate(`/restaurantes/${categoria.ID}`)}
 						>
 							<img
-								src={categoria.imagem}
-								alt={categoria.nome}
+								src={categoria.image}
+								alt={categoria.name}
 								className="imgCategory"
 							/>
 
-							<Typography className="textNames">{categoria.nome}</Typography>
+							<Typography className="textNames">{categoria.name}</Typography>
 						</div>
 					</Grid>
 				))}
