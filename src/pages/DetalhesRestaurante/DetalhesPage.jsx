@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import "./style.css";
 
 function DetalhesPage() {
-  const [detalhesID, setDetalhesID] = useState([]);
   const [detalhesNome, setDetalhesNome] = useState([]);
   const [detalhesImagem, setDetalhesImagem] = useState([]);
   const [detalhesDistancia, setDetalhesDistancia] = useState([]);
