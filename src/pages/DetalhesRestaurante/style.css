@@ -1,0 +1,25 @@
+.detalhes .gridContainer {
+	margin-top: 45px;
+}
+
+.detalhes .textNames {
+	text-align: center;
+	font-size: 14px;
+}
+
+.detalhes .imgRestaurante {
+	position: absolute;
+	width: 89px;
+	height: 89px;
+	left: 21px;
+	top: 124px;
+	border-radius: 5px;
+}
+
+.detalhes .containerDetalhes {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 10px 0 5px;
+	cursor: pointer;
+}
