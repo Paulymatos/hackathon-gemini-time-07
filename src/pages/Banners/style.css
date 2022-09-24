@@ -23,7 +23,13 @@
 }
 
 .full-height .descricao {
-  min-height: 140px;
+  /* min-height: 140px; */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
 }
 
 .full-height .actions {
