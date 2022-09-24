@@ -10,12 +10,11 @@ function RestaurantesPage() {
   const [restaurantesBaratinho, setRestaurantesBaratinho] = useState();
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { id } = useParams()
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
-      console.log(response)
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
