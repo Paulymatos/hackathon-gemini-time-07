@@ -14,17 +14,22 @@
 }
 
 .full-height .MuiTypography-h5 {
-  width: 50%;
+  width: 100%;
 }
 
 .full-height .subtitle {
   padding-bottom: 14px;
   min-height: 62px;
-  max-width: 20px;
 }
 
 .full-height .descricao {
-  min-height: 140px;
+  /* min-height: 140px; */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
 }
 
 .full-height .actions {
@@ -36,6 +41,7 @@
 .full-height .actions .MuiButton-contained {
   margin: top 10px;;
   width: 200px;
+
   font-weight: 700;
 }
 

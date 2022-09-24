@@ -1,0 +1,11 @@
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    padding: 20px;
+    display:flex
+}
+

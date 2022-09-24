@@ -22,7 +22,7 @@ function BannersPage() {
 
   const getBanners = async () => {
     const result = await getAllBanners();
-    setListaBanners(result.data);
+    setListaBanners(result.data.filter(banner => !banner.nome.includes('UNTER')));    
     setLoading(false);
   };
 
@@ -61,7 +61,7 @@ function BannersPage() {
         </Typography>
 
         <Typography variant="body2" align="center" className="descricao">
-          {selectedBanner.descriçao}
+          {selectedBanner.descricao}
         </Typography>
 
         <div className="actions">
